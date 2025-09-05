@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diva Dental Clinic | Diva Dental </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, gray, gray), url('data:image/svg+xml;base64,PHN2ZyB2aWR0aD0iMTA2NyIgaGVpZ2h0PSI3NjgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzAwYmNmZiIvPjwvc3ZnPg==');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonials-slider {
+            overflow: hidden;
+        }
+        
+        .testimonial-slide {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-lg z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-tooth text-2xl text-gray-600 mr-2"></i>
+                    <span class="text-2xl font-bold text-gray-600">Diva Dental Clinic</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-gray-600 transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-gray-600 transition-colors font-medium">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-gray-600 transition-colors font-medium">About</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-gray-600 transition-colors font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-gray-600 transition-colors font-medium">Contact</a>
+                    <a href="#appointment" class="text-gray-700 hover:text-gray-600 transition-colors font-medium">Book Appointment</a>
+                    <a href="http://localhost:5000/api/admin/appointments" class="text-gray-700 hover:text-gray-600 transition-colors font-medium" target="_blank">adminpage</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#home" class="block px-6 py-3 text-gray-700 hover:text-gray-600 border-b">Home</a>
+            <a href="#services" class="block px-6 py-3 text-gray-700 hover:text-gray-600 border-b">Services</a>
+            <a href="#about" class="block px-6 py-3 text-gray-700 hover:text-gray-600 border-b">About</a>
+            <a href="#testimonials" class="block px-6 py-3 text-gray-700 hover:text-gray-600 border-b">Testimonials</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-700 hover:text-gray-600 border-b">Contact</a>
+            <a href="#appointment" class="block px-6 py-3 text-gray-700 hover:text-gray-600">Book Appointment</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" style="font-family: 'Poppins', sans-serif;">ابتسامتك هي أولويتنا</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto"><b>استمتع برعاية أسنان عالية الجودة في بيئة مريحة وعصرية. يقدم فريقنا المتخصص خدمات أسنان شاملة للحفاظ على ابتسامتك صحية ومشرقة.</b></p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#appointment" class="bg-gray-600 hover:bg-black-700 px-8 py-4 rounded-full font-semibold transition-colors">Book Appointment</a>
+                <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full font-semibold transition-colors">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" style="font-family: 'Poppins', sans-serif;">Our Dental Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white p-8 rounded-lg shadow text-center">
+                    <div class="text-gray-600 text-4xl mb-4">
+                        <i class="fas fa-teeth"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">خدماتنا البسيطة</h3>
+                    <p class="text-gray-600"> تنظيف الاسنان واللثة من الجير و التكلسات , حشوات تجميلة , علاج عصب للاسنان الامامية و الخلفية, وخلع الاسنان العادي</p>
+                </div>
+                <div class="card-hover bg-white p-8 rounded-lg shadow text-center">
+                    <div class="text-gray-600 text-4xl mb-4">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">خدماتنا التجميلة</h3>
+                    <p class="text-gray-600">تبيض , </p>
+                </div>
+                <div class="card-hover bg-white p-8 rounded-lg shadow text-center">
+                    <div class="text-gray-600 text-4xl mb-4">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">خدماتنا الجراحية</h3>
+                    <p class="text-gray-600">زراعة(الماني , سويسري , ايطالي)</p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="about.jpeg" alt="Modern dental clinic interior with comfortable chairs and advanced dental equipment in a clean, professional setting" class="w-full rounded-lg shadow-lg" />
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800" style="font-family: 'Poppins', sans-serif;">About Diva Dental Clinic</h2>
+                    <p class="text-gray-600 mb-6" style="font-size: large;"><b>
+                        بخبرة تزيد عن 7 سنوات، تُقدم عيادة ديفا لطب الأسنان رعاية أسنان استثنائية لعائلات المجتمع. يتميز مرفقنا المتطور بأحدث التقنيات، ويكرس فريقنا المتعاطف جهوده لجعل كل زيارة مريحة وخالية من التوتر. نؤمن بأن الابتسامة الصحية ضرورية للصحة العامة، ونلتزم بمساعدة
+                        مرضانا على تحقيق صحة فموية مثالية والحفاظ عليها
+                        
+                        </b>
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">7+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">1000+</div>
+                            <div class="text-gray-600">Happy Patients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" style="font-family: 'Poppins', sans-serif;">What Our Patients Say</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="testimonials-slider">
+                    <div class="testimonial-slide bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-yellow-500 text-2xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">"Dr. Faris AlQadan is by far the best dentist in Jordan. His professionalism, expertise, and genuine care for his patients make every visit exceptional. I live in the United States, yet no matter where I am, I always come to him
+                            for my dental care because I truly trust his work. Every appointment is smooth, comfortable, and reassuring. Simply put, he is the only dentist I would ever choose. الدكتور فارس العقدان هو أفضل طبيب أسنان في الأردن بلا منازع.
+                            يتميز باحترافية عالية وخبرة كبيرة واهتمام صادق بمرضاه، مما يجعل كل زيارة له تجربة مميزة. أنا أعيش في الولايات المتحدة، ومع ذلك أعود دائماً إليه خصيصاً من أجل العناية بأسناني، لأنني أثق بعمله ثقة كاملة. مواعيدي معه دائماً مريحة
+                            ومطمئنة، وباختصار هو الطبيب الوحيد الذي أختاره دائماً."</p>
+                        <div class="font-semibold">Moe Kharabsheh </div>
+
+                    </div>
+
+                    <div class="testimonial-slide bg-white p-8 rounded-lg shadow-lg hidden">
+                        <div class="text-yellow-500 text-2xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">"افضل عيادة و اكثر دكتور ثقة اتعاملت معو في حياتي 🌹🌹 … "
+                        </p>
+                        <div class="font-semibold">Raghad Abd</div>
+
+                    </div>
+
+                    <div class="testimonial-slide bg-white p-8 rounded-lg shadow-lg hidden">
+                        <div class="text-yellow-500 text-2xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">"افضل دكتور "
+                        </p>
+                        <div class="font-semibold">Hasan Zayed</div>
+
+                    </div>
+                    <div class="testimonial-slide bg-white p-8 rounded-lg shadow-lg hidden">
+                        <div class="text-yellow-500 text-2xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">"موصى به للغاية "
+                        </p>
+                        <div class="font-semibold">samer sabbahin</div>
+
+                    </div>
+                </div>
+                <div class="flex justify-center mt-6">
+                    <button id="prev-testimonial" class="text-gray-400 hover:text-gray-600 mr-4">
+                        <i class="fas fa-chevron-left text-xl"></i>
+                    </button>
+                    <button id="next-testimonial" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-chevron-right text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" style="font-family: 'Poppins', sans-serif;">Book Your Appointment/احجز موعدك شو بتستنى</h2>
+            <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                <form class="space-y-6" id="appointment-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-gray-700 mb-2">First Name</label>
+                            <input id="firstName" name="firstName" type="text" required placeholder="Enter your first name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-gray-700 mb-2">Last Name</label>
+                            <input id="lastName" name="lastName" type="text" required placeholder="Enter your last name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                        <input id="email" name="email" type="email" placeholder="Enter your email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                        <input id="phone" name="phone" type="tel" required placeholder="Enter your phone number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="date" class="block text-gray-700 mb-2">Preferred Date</label>
+                            <input id="date" name="date" type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                        </div>
+                        <div>
+                            <label for="time" class="block text-gray-700 mb-2">Preferred Time</label>
+                            <select id="time" name="time" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        <option value="">Select time</option>
+        <option value="9:00 AM">9:00 AM</option>
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="11:00 AM">11:00 AM</option>
+        <option value="1:00 PM">1:00 PM</option>
+        <option value="2:00 PM">2:00 PM</option>
+        <option value="3:00 PM">3:00 PM</option>
+        <option value="4:00 PM">4:00 PM</option>
+      </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="notes" class="block text-gray-700 mb-2">Additional Notes</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your concerns or special requests" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+    Request Appointment
+  </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="font-family: 'Poppins', sans-serif;">Get In Touch</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-blue-400 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Our Location/موقعنا </h3>
+                                <p class="text-gray-300">
+                                    <a href="https://www.google.com/maps/place/%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9+%D8%A7%D9%84%D8%AF%D9%83%D8%AA%D9%88%D8%B1+%D9%81%D8%A7%D8%B1%D8%B3+%D8%A7%D9%84%D9%82%D8%B9%D8%AF%D8%A7%D9%86+%D9%84%D8%B7%D8%A8+%D9%88+%D8%AC%D8%B1%D8%A7%D8%AD%D8%A9+%D8%A7%D9%84%D9%81%D9%85+%D9%88+%D8%A7%D9%84%D8%A7%D8%B3%D9%86%D8%A7%D9%86%E2%80%AD/@31.9565317,35.8610443,678m/data=!3m2!1e3!4b1!4m6!3m5!1s0x151ca1001e4f313f:0x2d099aeeada08b6f!8m2!3d31.9565317!4d35.8610443!16s%2Fg%2F11mdckl5zy!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D "
+                                        target="_blank">click here/اضغط هنا </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-phone text-blue-400 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Phone/رقمنا</h3>
+                                <p class="text-gray-300">+962 0798409559</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-envelope text-blue-400 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Email</h3>
+                                <p class="text-gray-300">faresdivadental@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-blue-400 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Hours/وقت الدوام</h3>
+                                <p class="text-gray-300">Saturday-Thursday: 9AM - 9PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="almojama3.png" alt="Map showing the location of SmileBright Dental Clinic with nearby streets and landmarks in Healthcare City" class="w-full rounded-lg shadow-lg" />
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-300 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent text-white" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent text-white" placeholder="Your email">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent text-white" placeholder="Subject" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Message</label>
+                            <textarea class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" rows="5" placeholder="Your message" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gray-600 text-white py-4 rounded-lg font-semibold hover:bg-gray-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-600 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tooth text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Diva Dental Clinic</span>
+                    </div>
+                    <p class="text-gray-100 mb-4"><b>نقدم رعاية أسنان عالية الجودة بلمسة رقيقة (ابتسامتك شغفنا)</b></p>
+                    <div class="flex space-x-3">
+                        <a href="https://www.facebook.com/diva.dental.2025/" target="_blank" class="text-gray-100 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/dr.faresalqadan_clinic/" target="_blank" class="text-gray-100 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-100">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#appointment" class="hover:text-white transition-colors">Book Appointment</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-500 mt-8 pt-8 text-center text-gray-100">
+                <p>Diva Dental Clinic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Testimonials slider
+        let currentSlide = 0;
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+
+        function showSlide(index) {
+            testimonialSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                } else {
+                    slide.classList.add('hidden');
+                }
+            });
+        }
+
+        document.getElementById('prev-testimonial').addEventListener('click', () => {
+            currentSlide = currentSlide > 0 ? currentSlide - 1 : testimonialSlides.length - 1;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('next-testimonial').addEventListener('click', () => {
+            currentSlide = currentSlide < testimonialSlides.length - 1 ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % testimonialSlides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Form submissions (placeholders for now)
+        document.getElementById('appointment-form').addEventListener('submit', async(e) => {
+            e.preventDefault();
+
+            // Collect form values
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const notes = document.getElementById('notes').value.trim();
+
+            // Basic validation
+            if (!firstName || !lastName || !phone || !date || !time) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/appointments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        date,
+                        time,
+                        notes
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(data.message || 'Appointment booked successfully!');
+                    e.target.reset(); // reset form
+                } else {
+                    alert(data.message || 'Failed to book appointment.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            }
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+
+        // Initialize testimonials
+        showSlide(0);
+    </script>
+</body>
+
+</html>
+</content>
+</create_file>
